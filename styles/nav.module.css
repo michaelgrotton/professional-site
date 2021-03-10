@@ -1,0 +1,5 @@
+.navBorder {
+  @apply bg-gray-400 m-auto;
+  width: 95%;
+  height: 2px;
+}
