@@ -1,20 +1,20 @@
-import Head from 'next/head'
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
-import Link from 'next/link'
+import Head from "next/head";
+import Link from "next/link";
+import Nav from "./nav.js";
 
-const name = 'Shu Uesugi'
-export const siteTitle = 'Next.js Sample Website'
+const name = "Michael Grotton";
+export const siteTitle = "michaelgrotton.xyz";
 
 export default function Layout({ children, home }) {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
+        <link
+          href="https://fonts.googleapis.com/css2?family=Alice&family=Source+Sans+Pro:wght@400&display=swap"
+          rel="stylesheet"
         />
+        <meta name="description" content="Personal site for Michael Grotton" />
         <meta
           property="og:image"
           content={`https://og-image.now.sh/${encodeURI(
@@ -24,43 +24,15 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
-        {home ? (
-          <>
-            <img
-              src="/images/profile.jpg"
-              className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
-              alt={name}
-            />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
-          </>
-        ) : (
-          <>
-            <Link href="/">
-              <a>
-                <img
-                  src="/images/profile.jpg"
-                  className={`${styles.headerImage} ${utilStyles.borderCircle}`}
-                  alt={name}
-                />
-              </a>
-            </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
-              </Link>
-            </h2>
-          </>
-        )}
-      </header>
+      <Nav />
       <main>{children}</main>
       {!home && (
-        <div className={styles.backToHome}>
+        <div>
           <Link href="/">
             <a>← Back to home</a>
           </Link>
         </div>
       )}
     </div>
-  )
+  );
 }
