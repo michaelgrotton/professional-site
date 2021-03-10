@@ -10,13 +10,7 @@
   "dependencies": {
     "date-fns": "^2.19.0",
     "gray-matter": "^4.0.2",
-<<<<<<< HEAD
     "next": "^10.0.8",
-=======
-    "next": "9.5.3",
-    "postcss-flexbugs-fixes": "^4.2.1",
-    "postcss-preset-env": "^6.7.0",
->>>>>>> 79a1071aba39bc568794b9e4338bc8b81713e0bc
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "remark": "^12.0.0",
